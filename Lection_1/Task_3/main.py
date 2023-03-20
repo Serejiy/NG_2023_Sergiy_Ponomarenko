@@ -10,5 +10,3 @@ match action:
         print("Multiplication =",first*second)
     case 4:
         print("Division =",first/second)
-
-    
