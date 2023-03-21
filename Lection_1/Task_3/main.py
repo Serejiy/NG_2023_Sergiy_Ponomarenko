@@ -1,6 +1,6 @@
 first = int(input("First digit: "))
 second = int(input("Second digit: "))
-action = int(input("Choose action\n1)sum\n2)substract\n3)multiply\n4)divide\nYour choise: "))
+action = int(input("Choose action\n1)sum\n2)substract\n3)multiply\n4)divide\nYour choice: "))
 if action == 1:
     print("Sum =",first+second)
 elif action == 2:
