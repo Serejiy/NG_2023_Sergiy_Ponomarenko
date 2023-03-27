@@ -1,4 +1,3 @@
-print ("===============")
 def count_elems():
     N = int(input("Enter amount of elements: "))
     elements = []
