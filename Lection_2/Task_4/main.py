@@ -7,7 +7,7 @@ def add_book():
     author = input("Enter the author of the book: ")
     year = input("Enter the year of publication of the book: ")
     binding = input("Enter the binding type of the book: ")
-    pages = input("Enter the number of pages in the book: ")
+    pages = input("Enter the amount of pages in the book: ")
     genre = input("Enter the genre of the book: ")
     id_counter += 1
     print ("The ID of your book is:",id_counter)
@@ -22,7 +22,7 @@ def edit_book():
         author = input("Enter the new author of the book: ")
         year = input("Enter the new year of publication of the book: ")
         binding = input("Enter the new binding type of the book: ")
-        pages = input("Enter the new number of pages in the book: ")
+        pages = input("Enter the new amount of pages in the book: ")
         genre = input("Enter the new genre of the book: ")
         books[book_id] = {"Title": title, "Author": author, "Year": year, "Binding": binding, "Pages": pages, "Genre": genre}
         print("Book edited")
@@ -38,7 +38,7 @@ def delete_book():
         print("Book deleted!")
         print("====================")
     else:
-        print("Book not found!")
+        print("Wrong book ID!")
         print("====================")
 
 def view_book():
@@ -52,7 +52,7 @@ def view_book():
         print("Number of pages:", books[book_id]["Pages"])
         print("Genre:", books[book_id]["Genre"],'\n')
     else:
-        print("Book not found!")
+        print("Wrong book ID")
         print("====================")
 
 while True:
@@ -64,15 +64,15 @@ while True:
 
     choice = input("Enter the number of the command you want to execute: ")
 
-    if choice == "1":
+    if choice == 1:
         add_book()
-    elif choice == "2":
+    elif choice == 2:
         edit_book()
-    elif choice == "3":
+    elif choice == 3:
         delete_book()
-    elif choice == "4":
+    elif choice == 4:
         view_book()
-    elif choice == "5":
+    elif choice == 5:
         break
     else:
-        print("Invalid input. Please try again.")
+        print("Wrong action!")
