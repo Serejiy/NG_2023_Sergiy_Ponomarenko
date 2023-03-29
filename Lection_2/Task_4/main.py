@@ -11,17 +11,6 @@ def add():
     id_index += 1
     storage[id_index] = {"Name:":name,"Author":author,"Page amount:":page_amount,"Genre":genre,"Binding":binding}
     print("New book added!\nBook id:", id_index)
-    print("===================")
-
-def delete():
-    id_choice = input("Enter the book id: ")
-    if id_choice in storage:
-        del storage[id_choice]
-        print("Book deleted.")
-        print("===================")
-    else:
-        print("Wrong ID.")
-        print("===================")
     
 def edit():
     id_choice = input("Enter book id: ")
@@ -33,19 +22,23 @@ def edit():
         binding = input("Binding: ")
         storage[id_choice] = {"Name:":name,"Author":author,"Page amount:":page_amount,"Genre":genre,"Binding":binding}
         print("Book edited.")
-        print("===================")
     else:
         print("Wrong ID.")
-        print("===================")
+
+def delete():
+    id_choice = input("Enter the book id: ")
+    if id_choice in storage:
+        del storage[id_choice]
+        print("Book deleted.")
+    else:
+        print("Wrong ID.")
 
 def find():
     id_choice = int(input("Enter book ID: "))
     if id_choice in storage:
         print(storage[id_choice])
-        print("===================")
     else:
         print("Wrong ID.")
-        print("===================")
 
 while True:
     print("1.Add\n2.Delete\n3.Edit\n4.Find")
@@ -62,4 +55,3 @@ while True:
             find()
         case _:
             print("Wrong action!")
-            print("===================")
