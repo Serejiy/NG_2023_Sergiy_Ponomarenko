@@ -1,6 +1,6 @@
 elements = input("Enter elements: ").split()
 unique_elements = []
-for index in elements:
-    if elements.count(index) == 1:
-        unique_elements.append(index)
+for element in elements:
+    if elements.count(element) == 1:
+        unique_elements.append(element)
 print("Unique elements: ",unique_elements)
