@@ -42,16 +42,16 @@ def find():
 
 while True:
     print("1.Add\n2.Delete\n3.Edit\n4.Find")
-    action = int(input("Choose action: "))
+    action = input("Choose action: ")
 
     match action:
-        case 1:
+        case "1":
             add()
-        case 2:
+        case "2":
             delete()
-        case 3:
+        case "3":
             edit()
-        case 4:
+        case "4":
             find()
         case _:
             print("Wrong action!")
