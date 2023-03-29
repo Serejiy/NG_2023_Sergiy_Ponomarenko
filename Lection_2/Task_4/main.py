@@ -13,7 +13,7 @@ def add():
     print("New book added!\nBook id:", id_index)
     
 def edit():
-    id_choice = input("Enter book id: ")
+    id_choice = int(input("Enter book id: "))
     if id_choice in storage:
         name = input("Name: ")
         author = input("Author: ")
@@ -35,23 +35,20 @@ def delete():
 
 def find():
     id_choice = int(input("Enter book ID: "))
-    if id_choice in storage:
-        print(storage[id_choice])
-    else:
-        print("Wrong ID.")
+    print(storage[id_choice])
 
 while True:
     print("1.Add\n2.Delete\n3.Edit\n4.Find")
-    action = input("Choose action: ")
+    action = int(input("Choose action: "))
 
     match action:
-        case "1":
+        case 1:
             add()
-        case "2":
+        case 2:
             delete()
-        case "3":
+        case 3:
             edit()
-        case "4":
+        case 4:
             find()
         case _:
             print("Wrong action!")
