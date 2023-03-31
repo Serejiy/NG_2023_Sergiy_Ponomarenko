@@ -26,7 +26,7 @@ def edit():
         print("Wrong ID.")
 
 def delete():
-    id_choice = input("Enter the book id: ")
+    id_choice = int(input("Enter the book id: "))
     if id_choice in storage:
         del storage[id_choice]
         print("Book deleted.")
@@ -35,7 +35,10 @@ def delete():
 
 def find():
     id_choice = int(input("Enter book ID: "))
-    print(storage[id_choice])
+    if id_choice in storage: 
+        print(storage[id_choice])
+    else:
+        print("Book not found!")
 
 while True:
     print("1.Add\n2.Delete\n3.Edit\n4.Find")
