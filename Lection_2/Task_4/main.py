@@ -52,16 +52,9 @@ while True:
     action = int(input("Choose action: "))
 
     match action:
-        case 1:
-            add()
-        case 2:
-            delete()
-        case 3:
-            edit()
-        case 4:
-            find()
-        case 5:
-            print("Goodbye!")
-            exit()
-        case default:
-            print("Wrong action!")
+        case 1: add()
+        case 2: delete()
+        case 3: edit()
+        case 4: find()
+        case 5: print("Goodbye!"),exit()
+        case default: print("Wrong action!")
