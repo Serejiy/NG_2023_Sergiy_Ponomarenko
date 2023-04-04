@@ -6,14 +6,15 @@ def add_urls():
     lst_size = int(input("Enter the size of the list: "))
     for url in range(lst_size):
         elmnt_num += 1
-        input_url = input(f"Enter {elmnt_num} url: ")
+        input_url = input(f"Enter url {elmnt_num}: ")
         urls.append(input_url)
     return urls
 
 urls = add_urls()
 
 start = input("Urls added to the list.\nType 'y' to start checking: ")
-if start.lower() == 'y':
+if start == 'y':
+    print ("Processing...")
     num = 0
     status_codes = {
         200: "OK",
