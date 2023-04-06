@@ -1,15 +1,15 @@
-set1 = input("Enter elements of the first set: ").split()
-set2 = input("Enter elements of the second set: ").split()
-set3 = input("Enter elements of the third set: ").split()
-non_unique_list = []
-for element in set1:
-    if set1.count(element)>1:
-        non_unique_list.append(element)
-for element in set2:
-    if set2.count (element)>1:
-        non_unique_list.append(element)
-for element in set3:
-    if set3.count (element)>1:
-        non_unique_list.append(element)
+lists = []
+non_unique = []
+lsts_amount = int(input("Enter the lists amount: "))
 
-print ("The set of non-unique elements:",set(non_unique_list))
+
+for list in range(lsts_amount):
+    add = input(f"Enter the {list+1} list: ").split()
+    lists.append(add)
+
+for add in lists:
+    for element in add:
+        if add.count(element) > 1:
+            non_unique.append(element)
+
+print ("Non unique list : ", set(non_unique))
