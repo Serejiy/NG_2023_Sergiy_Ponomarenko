@@ -1,9 +1,9 @@
-def draw_diamond(n):
-    if n <= 0:
+def draw_diamond(amount):
+    if amount <= 0:
         return
-    print("*" * n)
-    draw_diamond(n - 1)
-    print("*" * n)
+    print("*" * amount)
+    draw_diamond(amount - 1)
+    print("*" * amount)
 
-n = int(input("Enter amount of stars: "))
-draw_diamond(n)
+amount = int(input("Enter amount of stars: "))
+draw_diamond(amount)
