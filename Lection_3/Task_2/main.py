@@ -1,9 +1,7 @@
-def draw_diamond(amount):
-    if amount <= 0:
-        return
-    print("*" * amount)
-    draw_diamond(amount - 1)
-    print("*" * amount)
+size = int(input("Enter the size of the rhombus: "))
 
-amount = int(input("Enter amount of stars: "))
-draw_diamond(amount)
+for i in range(size):
+    print(" "*(size-i-1) + "* "*(i+1))
+
+for i in range(size-1, 0, -1):
+    print(" "*(size-i) + "* "*(i))
