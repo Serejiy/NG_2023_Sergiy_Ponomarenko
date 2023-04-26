@@ -1,7 +1,12 @@
+def print_rhombus(size, i=1):
+    if i <= size:
+        num_spaces = abs(size - i)
+        num_stars = i
+        print(" " * num_spaces + "* " + "* " * (num_stars - 1))
+        print_rhombus(size, i + 1)
+        print(" " * num_spaces + "* " + "* " * (num_stars - 1))
+    else:
+        return
+
 size = int(input("Enter the size of the rhombus: "))
-
-for i in range(size):
-    print(" "*(size-i-1) + "* "*(i+1))
-
-for i in range(size-1, 0, -1):
-    print(" "*(size-i) + "* "*(i))
+print_rhombus(size)
