@@ -2,10 +2,6 @@ import argparse
 import os
 
 def find_files(folder, file_name):
-    """
-    Функция для поиска файлов с указанным именем в указанной папке
-    и ее подпапках. Возвращает список найденных файлов.
-    """
     found_files = []
     for root, dirs, files in os.walk(folder):
         for file in files:
@@ -13,22 +9,19 @@ def find_files(folder, file_name):
                 found_files.append(os.path.join(root, file))
     return found_files
 
-# Создание объекта парсера для аргументов командной строки
-parser = argparse.ArgumentParser(description='Поиск файлов в папке')
-parser.add_argument('--folder', type=str, help='Путь к папке, в которой нужно искать файлы')
-parser.add_argument('--file', type=str, help='Имя файла для поиска')
+parser = argparse.ArgumentParser(description='Searching for files in folder')
+parser.add_argument('--folder', type=str, help='Path to folder, for the searched files')
+parser.add_argument('--file', type=str, help='Name of the file to search')
 
-# Парсинг аргументов командной строки
 args = parser.parse_args()
 
-# Вызов функции для поиска файлов и вывод результатов
 if args.folder and args.file:
     files = find_files(args.folder, args.file)
     if files:
-        print(f'Найдено {len(files)} файлов:')
+        print(f'Found {len(files)} files:')
         for file in files:
             print(file)
     else:
-        print(f'Файлы с именем "{args.file}" не найдены в папке "{args.folder}".')
+        print(f'Files with name "{args.file}" not found in folder "{args.folder}".')
 else:
-    print('Укажите путь к папке и имя файла для поиска.')
+    print("Enter the path to folder and name of the file for searching\nExample: python rfind.py --folder 'your folder here' --file 'your file here'")
