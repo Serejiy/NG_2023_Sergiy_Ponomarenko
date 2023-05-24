@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+    <script type="text/javascript">
+      var socket = io();
+
+      socket.on("message", function (msg) {
+        var chatBox = document.getElementById("chat-box");
+        chatBox.innerHTML += "<p>" + msg + "</p>";
+      });
+
+      function sendMessage() {
+        var input = document.getElementById("message-input");
+        var message = input.value;
+        socket.send(message);
+        input.value = "";
+      }
+
+      function joinRoom() {
+        var roomInput = document.getElementById("room-input");
+        var room = roomInput.value;
+        socket.emit("join", { room: room });
+        roomInput.value = "";
+      }
+
+      function leaveRoom() {
+        socket.emit("leave");
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Chat</h2>
+    <div id="chat-box"></div>
+    <input type="text" id="message-input" />
+    <button onclick="sendMessage()">Send</button>
+    <br />
+    <input type="text" id="room-input" />
+    <button onclick="joinRoom()">Join Room</button>
+    <button onclick="leaveRoom()">Leave Room</button>
+  </body>
+</html>
